@@ -1,0 +1,116 @@
+baseURL = 'http://example.org/'
+theme = "LoveIt"
+title = 'HacknShare'
+languageCode = 'en'
+languageName = "English"
+hasCJKLanguage = true
+paginate = 12
+
+[author]
+  name = "KenjiEndo"
+  email = ""
+  link = ""
+
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    pre = ""
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+
+  [[menu.main]]
+    weight = 4
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About"
+    url = "/about/"
+    title = ""
+
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+[params]
+  defaultTheme = "auto"
+  title = "HacknShare"
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+
+    [params.header.title]
+      name = "HacknShare"
+
+  [params.section]
+    paginate = 20
+    dateFormat = "01-02"
+
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+
+  [params.search]
+    enable = true
+    type = "lunr"
+    contentLength = 4000
+    maxResultLength = 10
+    snippetLength = 30
+    highlightTag = "em"
+    absoluteURL = false
+
+  [params.app]
+    title = "a"
+
+  [params.home]
+    [params.home.profile]
+      enable = true
+      avatarURL = "/images/kenjiendo.png"
+      title = "HacknShare"
+      subtitle = ""
+      typeit = true
+
+  [params.home.posts]
+    enable = true
+    paginate = 3
+
+  [params.social]
+    GitHub = "KenjiEndo15"
+    Twitter = "KenjiEndo15"
+
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    linkToMarkdown = true
+
+  [params.page.code]
+    copy = true
+    maxShownLines = 50
+
+  [params.page.share]
+    enable = true
+    Twitter = true
+
+  [params.page.comment]
+    enable = false
