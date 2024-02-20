@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2024-02-07
-draft: true
+draft: false
 ---
 
 Hey, you can call me Kenji. I’m just a dude working in cybersecurity. I like learning new things, that's why I decided to create this blog - to share what I've picked up along the way.
