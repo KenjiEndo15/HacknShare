@@ -86,7 +86,7 @@ paginate = 12
   [params.home]
     [params.home.profile]
       enable = true
-      avatarURL = "/images/kenjiendo.png"
+      avatarURL = "images/kenjiendo.png"
       title = "HacknShare"
       subtitle = ""
       typeit = true
