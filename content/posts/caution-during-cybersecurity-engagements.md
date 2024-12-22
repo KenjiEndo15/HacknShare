@@ -4,7 +4,7 @@ date: 2024-12-22
 lastmod: 2024-12-22
 author: KenjiEndo
 categories: [cybersecurity]
-draft: true
+draft: false
 ---
 
 In cybersecurity engagements, there are occasions when attack techniques may leave traces within a client’s infrastructure or, in more concerning cases, involve the use of malicious, backdoored tools.
