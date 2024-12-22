@@ -16,7 +16,7 @@ The technology is relatively unknown in the world of web frameworks. Together wi
 This series is divided into two parts. The first part introduces the technology, explains its basic functionalities, and covers template injection vulnerabilities. The second part focuses on [specific topic] and can be found here: link.">
   <meta itemprop="datePublished" content="2024-12-22T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="300">
+  <meta itemprop="wordCount" content="242">
   <meta itemprop="keywords" content="Cybersecurity"><meta property="og:url" content="http://localhost:1313/posts/4d-attack-surface/">
   <meta property="og:site_name" content="HacknShare">
   <meta property="og:title" content="4D Attack Surface — Part 1">
@@ -49,7 +49,7 @@ This series is divided into two parts. The first part introduces the technology,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http:\/\/localhost:1313\/posts\/4d-attack-surface\/"
-    },"image": ["http:\/\/localhost:1313\/images\/kenjiendo-image.png"],"genre": "posts","wordcount":  300 ,
+    },"image": ["http:\/\/localhost:1313\/images\/kenjiendo-image.png"],"genre": "posts","wordcount":  242 ,
     "url": "http:\/\/localhost:1313\/posts\/4d-attack-surface\/","datePublished": "2024-12-22T00:00:00+00:00","dateModified": "2024-12-22T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -93,7 +93,7 @@ This series is divided into two parts. The first part introduces the technology,
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>4D Attack Surface — Part 1</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      KenjiEndo</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/cybersecurity/" class="post-category" title="Category - Cybersecurity"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Cybersecurity</a></span></div><div class="post-meta-line"><span title="published on 2024-12-22 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-12-22">2024-12-22</time></span>&nbsp;<span title="300 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+      KenjiEndo</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/cybersecurity/" class="post-category" title="Category - Cybersecurity"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Cybersecurity</a></span></div><div class="post-meta-line"><span title="published on 2024-12-22 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-12-22">2024-12-22</time></span>&nbsp;<span title="242 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -115,10 +115,15 @@ This series is divided into two parts. The first part introduces the technology,
         </li>
       </ul>
     </li>
-    <li><a href="#template-injections">Template Injections</a>
+    <li><a href="#template-exploits">Template Exploits</a>
       <ul>
-        <li><a href="#probing-for-template-injections">Probing for Template Injections</a></li>
-        <li><a href="#sending-malicious-injections">Sending Malicious Injections</a></li>
+        <li><a href="#probing-for-vulnerabilities">Probing for Vulnerabilities</a></li>
+        <li><a href="#delivering-malicious-payloads">Delivering Malicious Payloads</a>
+          <ul>
+            <li><a href="#simple-payloads">Simple Payloads</a></li>
+            <li><a href="#complex-payloads">Complex Payloads</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#end-notes">End Notes</a></li>
@@ -172,37 +177,37 @@ It can help with tasks like building websites, running a web server, managing an
   </a>
 </h4><p>&hellip;</p>
 <hr>
-<h2 id="template-injections" class="heading-element"><span>Template Injections</span>
-  <a href="#template-injections" class="heading-mark">
+<h2 id="template-exploits" class="heading-element"><span>Template Exploits</span>
+  <a href="#template-exploits" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><p>&hellip;</p>
-<h3 id="probing-for-template-injections" class="heading-element"><span>Probing for Template Injections</span>
-  <a href="#probing-for-template-injections" class="heading-mark">
+</h2><p>&hellip;Introduction</p>
+<h3 id="probing-for-vulnerabilities" class="heading-element"><span>Probing for Vulnerabilities</span>
+  <a href="#probing-for-vulnerabilities" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><p>&hellip;</p>
-<h3 id="sending-malicious-injections" class="heading-element"><span>Sending Malicious Injections</span>
-  <a href="#sending-malicious-injections" class="heading-mark">
+</h3><p>&hellip;?</p>
+<h3 id="delivering-malicious-payloads" class="heading-element"><span>Delivering Malicious Payloads</span>
+  <a href="#delivering-malicious-payloads" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><p>&hellip;</p>
+</h3><p>&hellip;Introduction</p>
+<h4 id="simple-payloads" class="heading-element"><span>Simple Payloads</span>
+  <a href="#simple-payloads" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>&hellip;4D commands (QUIT) ; XSS ; ?</p>
+<h4 id="complex-payloads" class="heading-element"><span>Complex Payloads</span>
+  <a href="#complex-payloads" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><p>&hellip;SystemWorkers</p>
 <hr>
 <h2 id="end-notes" class="heading-element"><span>End Notes</span>
   <a href="#end-notes" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>&hellip;</p>
-<hr>
-<div class="details admonition note open">
-  <div class="details-summary admonition-title"><i class="icon fa-fw fa-solid fa-pencil-alt" aria-hidden="true"></i>Note<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-  <div class="details-content">
-    <div class="admonition-content"><p>I’m not omniscient, and I do my best to avoid writing incorrect information. If you notice anything wrong, feel free to contact me, and I’ll gladly fix it: <a href="https://x.com/KenjiEndo15"target="_blank" rel="external nofollow noopener noreferrer">@KenjiEndo15</a>.</p>
-<hr>
-<p>The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I used AI to proofread and improve the text for better readability, helping speed up the process.</p>
-</div>
-  </div>
-</div>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">

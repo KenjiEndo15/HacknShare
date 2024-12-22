@@ -74,13 +74,3 @@ While such situations can sometimes be attributed to *bad luck*, they highlight 
 This blog post is relatively brief, and there’s much more that could be added. I wrote it mainly as a reminder for people in the field, whether they are juniors or seniors. Depending on demand, I may later expand further on specific cases.
 
 Furthermore, I have not encountered any real legal cases — whether personally or online — related to the topics I’ve discussed. **If you’re aware of any relevant cases or court rulings, please feel free to share them with me at:** https://x.com/KenjiEndo15.
-
----
-
-{{< admonition Note >}}
-I’m not omniscient, and I do my best to avoid writing incorrect information. If you notice anything wrong, feel free to contact me, and I’ll gladly fix it: [@KenjiEndo15](https://x.com/KenjiEndo15).
-
----
-
-The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I used AI to proofread and improve the text for better readability, helping speed up the process.
-{{< /admonition >}}

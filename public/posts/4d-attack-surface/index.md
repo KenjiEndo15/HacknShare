@@ -40,29 +40,25 @@ During penetration testing, it could help improve the testing of websites. Addit
 
 ---
 
-## Template Injections
-...
+## Template Exploits
+...Introduction
 
-### Probing for Template Injections
-...
+### Probing for Vulnerabilities
+...?
 
-### Sending Malicious Injections
-...
+### Delivering Malicious Payloads
+...Introduction
+
+#### Simple Payloads
+...4D commands (QUIT) ; XSS ; ?
+
+#### Complex Payloads
+...SystemWorkers
 
 ---
 
 ## End Notes
 ...
-
----
-
-{{&lt; admonition Note &gt;}}
-I’m not omniscient, and I do my best to avoid writing incorrect information. If you notice anything wrong, feel free to contact me, and I’ll gladly fix it: [@KenjiEndo15](https://x.com/KenjiEndo15).
-
----
-
-The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I used AI to proofread and improve the text for better readability, helping speed up the process.
-{{&lt; /admonition &gt;}}
 
 ---
 

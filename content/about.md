@@ -11,3 +11,13 @@ My main interests are cybersecurity, the Japanese language, and drawing. You'll 
 By the way, Kenji Endo is the hero from the famous manga made by Naoki Urasawa, 20th Century Boys. Make sure to read it; it’s worth it.
 
 Welcome aboard!
+
+---
+
+{{< admonition Note >}}
+I’m not omniscient, and I do my best to avoid writing incorrect information. If you notice anything wrong, feel free to contact me, and I’ll gladly fix it: [@KenjiEndo15](https://x.com/KenjiEndo15).
+
+---
+
+The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I used AI to proofread and improve the text for better readability, helping speed up the process.
+{{< /admonition >}}
