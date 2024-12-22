@@ -9,6 +9,14 @@
     <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>4D Attack Surface — Part 1</title>
+      <link>http://localhost:1313/posts/4d-attack-surface/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/4d-attack-surface/</guid>
+      <category domain="http://localhost:1313/categories/cybersecurity/">Cybersecurity</category>
+      <description>&lt;p&gt;&lt;a href=&#34;https://us.4d.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;4D&lt;/a&gt; is a company that provides a platform for developing applications.&#xA;It can help with tasks like building websites, running a web server, managing an SQL server, and much more.&lt;/p&gt;&#xA;&lt;p&gt;The technology is relatively unknown in the world of web frameworks. Together with &lt;a href=&#34;https://enzo-cadoni.fr/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Enzo Cadoni&lt;/a&gt;, we decided to explore it and examine the 4D attack surface for penetration testing.&lt;/p&gt;&#xA;&lt;p&gt;This series is divided into two parts. The first part introduces the technology, explains its basic functionalities, and covers template injection vulnerabilities. The second part focuses on &lt;strong&gt;[specific topic]&lt;/strong&gt; and can be found here: &lt;strong&gt;link&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Caution during Cybersecurity Engagements</title>
       <link>http://localhost:1313/posts/caution-during-cybersecurity-engagements/</link>
       <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
