@@ -11,8 +11,9 @@ theme = 'FixIt'
   _merge = "shallow"
 
 [params]
+  images = ["/images/hacknshare-preview.png"]
   [params.seo]
-    images = "/images/kenjiendo-image.png"
+    image = "/images/kenjiendo-image.png"
     thumbnailUrl = "/images/kenjiendo-image.png"
   [params.cookieconsent]
     enable = false
