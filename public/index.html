@@ -11,8 +11,8 @@
     <title>HacknShare</title><meta name="author" content="">
 <meta name="description" content="">
   <meta itemprop="name" content="HacknShare">
-  <meta itemprop="datePublished" content="2024-12-22T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-12-22T00:00:00+00:00"><meta property="og:url" content="http://localhost:1313/">
+  <meta itemprop="datePublished" content="2024-12-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-26T00:00:00+00:00"><meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="HacknShare">
   <meta property="og:title" content="HacknShare">
   <meta property="og:locale" content="en_us">
@@ -66,7 +66,16 @@
     </a><a href="https://twitter.com/KenjiEndo15" title="X"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/4d-attack-surface/">4D Attack Surface — Part 1</a>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/malware-development-notes/">Malware Development Notes</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      KenjiEndo</span></span>&nbsp;<span class="post-publish" title='2024-12-26 00:00:00'>published on <time datetime="2024-12-26">2024-12-26</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/cybersecurity/" class="post-category" title="Category - Cybersecurity"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Cybersecurity</a></span></div><div class="content"><p>This page will be regularly updated with my notes on malware development. Keep in mind that I&rsquo;m still learning, so some information might not be entirely accurate.</p>
+<h3 id="code-signing" class="heading-element"><span>Code Signing</span>
+  <a href="#code-signing" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>The signature of a binary can be used to enhance its reputation, even if it contains potentially malicious data.</p></div><div class="post-footer">
+    <a href="/posts/malware-development-notes/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/4d-attack-surface/">4D Attack Surface — Part 1</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       KenjiEndo</span></span>&nbsp;<span class="post-publish" title='2024-12-22 00:00:00'>published on <time datetime="2024-12-22">2024-12-22</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/cybersecurity/" class="post-category" title="Category - Cybersecurity"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Cybersecurity</a></span></div><div class="content"><p><a href="https://us.4d.com/"target="_blank" rel="external nofollow noopener noreferrer">4D</a> is a company that provides a platform for developing applications.
 It can help with tasks like building websites, running a web server, managing an SQL server, and much more.</p>
@@ -76,7 +85,7 @@ It can help with tasks like building websites, running a web server, managing an
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/caution-during-cybersecurity-engagements/">Caution During Cybersecurity Engagements</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       KenjiEndo</span></span>&nbsp;<span class="post-publish" title='2024-12-22 00:00:00'>published on <time datetime="2024-12-22">2024-12-22</time></span><span class="post-included-in">&nbsp;included in <a href="/categories/cybersecurity/" class="post-category" title="Category - Cybersecurity"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Cybersecurity</a></span></div><div class="content"><p>In cybersecurity engagements, there are occasions when attack techniques may leave traces within a client’s infrastructure or, in more concerning cases, involve the use of malicious, backdoored tools.</p>
-<p>This post provides brief examples that responsible professionals should be aware of to ensure they exercise proper caution after the engagement.</p>
+<p>This post provides brief examples that responsible professionals should be aware of to ensure they exercise proper caution during and after the engagement.</p>
 <hr>
 <h3 id="malicious-tools" class="heading-element"><span>Malicious Tools</span>
   <a href="#malicious-tools" class="heading-mark">

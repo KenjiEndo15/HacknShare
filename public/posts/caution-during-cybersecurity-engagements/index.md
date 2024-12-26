@@ -3,7 +3,7 @@
 
 In cybersecurity engagements, there are occasions when attack techniques may leave traces within a client’s infrastructure or, in more concerning cases, involve the use of malicious, backdoored tools.
 
-This post provides brief examples that responsible professionals should be aware of to ensure they exercise proper caution after the engagement.
+This post provides brief examples that responsible professionals should be aware of to ensure they exercise proper caution during and after the engagement.
 
 ---
 
@@ -31,7 +31,7 @@ Let’s consider another scenario where you were tasked with pentesting a web ap
 
 After the engagement ended, you forgot to remove the web shell, and the client was not informed about it either. **Eventually, malicious actors discovered and used the web shell to compromise the server**.
 
-Can you imagine the chaos this would cause for you, your company, and your client? While I haven’t encountered a real-life case like this, either personally or online, the risk is real—web shells can sometimes be accidentally left behind.
+Can you imagine the chaos this would cause for you, your company, and your client? While I haven’t encountered a real-life case like this, either personally or online, the risk is real — web shells can sometimes be accidentally left behind.
 
 The Cybersecurity and Infrastructure Security Agency (CISA) conducted a Red Team Assessment (RTA) for an organization and shared details about it in their [blog post](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-326a). I found the following paragraph especially interesting:
 
@@ -39,7 +39,7 @@ The Cybersecurity and Infrastructure Security Agency (CISA) conducted a Red Team
 
 This issue applies not only to web shells but also to other types of artifacts. We can mention passwords you set for your grey-box pentesting accounts. What kind of password would you choose for this account? Many might feel tempted to choose a weak password for the sake of convenience — but this approach can lead to significant risks.
 
-Choosing a weak password, particularly for a highly privileged account, is strongly discouraged. Prioritizing convenience over security is never a worthwhile trade-off. A weak password could be discovered during the engagement, either by an attacker or even by the client themselves, which could undermine your professional credibility.
+Choosing a weak password, particularly for a highly privileged account, is strongly discouraged. Prioritizing convenience over security may not be a worthwhile trade-off. A weak password could be discovered during the engagement, either by an attacker or even by the client themselves, which could undermine your professional credibility.
 
 The same applies to temporary files. When it comes to Windows exploits, there are several [ways to dump secrets](https://www.thehacker.recipes/ad/movement/credentials/dumping/). Some dumps may end up in the target computer&#39;s file system. Copying the dump to your machine will leave a copy behind. I can imagine the bad actor stumbling upon an NTDS dump - enjoy the free credentials 🎉.
 
@@ -58,7 +58,7 @@ Using this exploit, **you *inadvertently* caused a major disruption as the domai
 
 I’ve seen this happen before when, unfortunately, a bit more research could have revealed a [non-disruptive alternative discovered](https://dirkjanm.io/a-different-way-of-abusing-zerologon/) by Dirk-Jan ([@_dirkjan](https://x.com/_dirkjan)).
 
-Some exploits may seem less risky and more tempting to execute, but in such cases, obtaining explicit client approval is absolutely essential. In fact, whenever in doubt, you should regularly consult the client. This could involve exploiting a vulnerability that might have unintended side effects or retrieving locally sensitive files, such as NTDS dumps or password manager vaults.
+Some exploits may seem less risky and more tempting to execute, but in such cases, obtaining explicit client approval is absolutely essential. In fact, whenever in doubt, you should regularly consult your client. This could involve exploiting a vulnerability that might have unintended side effects or retrieving locally sensitive files, such as NTDS dumps or password manager vaults.
 
 Another example of a strong DoS attack I&#39;ve encountered involves account locking within an AD environment. In this case, a brute-force attempt was made under the assumption that the domain policy did not enforce account lockouts. However, a fine-grained policy was in place that established lockout thresholds, and this critical detail was inaccessible because the pentester lacked the necessary privileges to retrieve it.
 

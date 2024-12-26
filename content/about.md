@@ -19,5 +19,5 @@ I’m not omniscient, and I do my best to avoid writing incorrect information. I
 
 ---
 
-The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I used AI to proofread and improve the text for better readability, helping speed up the process.
+The blog posts I write are done in my free time, both for myself and for the community. Since this takes time, I use AI to make my English clearer and easier to read, which helps save time. **I don’t use AI to create the main content**.
 {{< /admonition >}}
