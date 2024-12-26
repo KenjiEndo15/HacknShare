@@ -12,7 +12,7 @@ theme = 'FixIt'
 
 [params]
   [params.seo]
-    image = "/images/kenjiendo-image.png"
+    images = "/images/kenjiendo-image.png"
     thumbnailUrl = "/images/kenjiendo-image.png"
   [params.cookieconsent]
     enable = false
