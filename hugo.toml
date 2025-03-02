@@ -48,14 +48,6 @@ theme = 'FixIt'
     title = ""
   [[menu.main]]
     weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-  [[menu.main]]
-    weight = 3
     identifier = "categories"
     pre = ""
     post = ""
@@ -64,7 +56,7 @@ theme = 'FixIt'
     title = ""
 
   [[menu.main]]
-    weight = 4
+    weight = 3
     identifier = "about"
     pre = ""
     post = ""
