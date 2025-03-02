@@ -1,7 +1,7 @@
 ---
 title: "Caution during Cybersecurity Engagements"
 date: 2024-12-26
-lastmod: 2024-12-22
+lastmod: 2024-03-02
 author: KenjiEndo
 categories: [cybersecurity]
 draft: false
@@ -18,7 +18,7 @@ During a web application pentest, imagine gaining remote access to your client�
 
 There are many ways to escalate privileges on Linux, and you know just the tool to speed up your research: [linpeas.sh](https://github.com/peass-ng/PEASS-ng). Without hesitation, you decide to download the script by heading to https://linpeas.sh/. You then come across the following script and run it without a second thought:
 
-{{< image src="/images/linpeas_border.png" caption="https://x.com/Cyb3rC3lt/status/1861780357890109483" >}}
+{{< image src="/images/caution-during-cybersecurity-engagements/linpeas_border.png" caption="https://x.com/Cyb3rC3lt/status/1861780357890109483" >}}
 
 **Some of your client's Linux server information has just been sent to someone you don't know.** Chris Hatton ([@hattonsec](https://x.com/hattonsec)) received [thousands unique hits in a month](https://x.com/hattonsec/status/1385250223363137536) when he registrered this domain without ill intention.
 
@@ -55,6 +55,8 @@ As for temporary files, they should be documented and promptly removed when they
 
 The list could go on, but I’ll stop here. Just remember to be mindful of what you leave behind in a client’s environment. Their infrastructure should be returned to its original state once your engagement is complete.
 
+---
+
 ## Denial-of-Services
 The last case I'll mention in this blog post is related to Denial-of-Services (DoS).
 
@@ -69,6 +71,8 @@ Some exploits may seem less risky and more tempting to execute, but in such case
 Another example of a strong DoS attack I've encountered involves account locking within an AD environment. In this case, a brute-force attempt was made under the assumption that the domain policy did not enforce account lockouts. However, a fine-grained policy was in place that established lockout thresholds, and this critical detail was inaccessible because the pentester lacked the necessary privileges to retrieve it.
 
 While such situations can sometimes be attributed to *bad luck*, they highlight the challenging reality of pentesting: we must continually expand our knowledge about the environments we're testing.
+
+---
 
 ## End Notes
 This blog post is relatively brief, and there’s much more that could be added. I wrote it mainly as a reminder for people in the field, whether they are juniors or seniors. Depending on demand, I may later expand further on specific cases.
